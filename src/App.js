@@ -107,7 +107,7 @@ export default function App() {
           <div className="card index-card">
     <h2>프로젝트 인덱스</h2>
     <ul className="index">
-      <li><a href="#p1">[1] MyPlate – 복지 가맹점/리뷰·즐겨찾기</a></li>
+      <li><a href="#p1">[1] MyPlate – 혼밥, 복지카드 이용자들을 위한 맛집 추천 사이트</a></li>
       <li><a href="#p2">[2] Scout – 제주 여행정보 포털</a></li>
       <li><a href="#p3">[3] Fitshare – 운동 백과 + 커뮤니티</a></li>
     </ul>
@@ -145,7 +145,7 @@ export default function App() {
 
           {/* Project 1 */}
           <article id="p1" className="project">
-            <h3>MyPlate · 복지 가맹점/리뷰·즐겨찾기</h3>
+            <h3>MyPlate · 혼밥, 복지카드 이용자들을 위한 맛집 추천 사이트</h3>
             <p className="meta">기간: 2025.08 – 2025.09 · 팀 | 포지션: 백엔드, 프론트</p>
 
             {/* 1) 시연 영상 : 전체 폭 */}
