@@ -64,10 +64,11 @@ function VideoBox({ src, poster, className }) {
   return (
     <div className={className || ""}>
       <video
+        autoPlay          // 🔹자동재생
+        muted             // 🔹모바일 자동재생 조건
+        playsInline       // 🔹iOS 사파리 전체화면 방지
         controls
-        playsInline
-        muted
-        preload="metadata"
+        preload="auto"    // 필요 데이터 미리 받기
         style={{ width: "100%", borderRadius: 12 }}
         poster={poster ? asset(poster) : undefined}
         onError={(e) => {
@@ -105,13 +106,13 @@ export default function App() {
         {/* ===== Hero ===== */}
         <section className="hero">
           <div className="card index-card">
-    <h2>프로젝트 인덱스</h2>
-    <ul className="index">
-      <li><a href="#p1">[1] MyPlate – 혼밥, 복지카드 이용자들을 위한 맛집 추천 사이트</a></li>
-      <li><a href="#p2">[2] Scout – 제주 여행정보 포털</a></li>
-      <li><a href="#p3">[3] Fitshare – 운동 백과 + 커뮤니티</a></li>
-    </ul>
-  </div>
+            <h2>프로젝트 인덱스</h2>
+            <ul className="index">
+              <li><a href="#p1">[1] MyPlate – 혼밥, 복지카드 이용자들을 위한 맛집 추천 사이트</a></li>
+              <li><a href="#p2">[2] Scout – 제주 여행정보 포털</a></li>
+              <li><a href="#p3">[3] Fitshare – 운동 백과 + 커뮤니티</a></li>
+            </ul>
+          </div>
         </section>
 
         {/* ===== Global Skills ===== */}
