@@ -7,17 +7,20 @@ const asset = (p) => `${BASE}${p}`;
 
 /** 프로젝트별 사용 기술 */
 const STACK = {
-  myplate: [ "React", "React Router", "Axios", "CSS", "REST API", "JWT", "GitHub Pages" ],
-  scout: [ "React", "Axios", "CSS", "REST API", "Open API" ],
-  fitshare: [ "React", "CSS", "REST API", "Pagination", "Modal" ],
+  myplate: [ "React", "React Router", "Axios", "CSS", "REST API", "JWT", "GitHub Pages", "Java · Spring (MVC/Security)",
+    "MyBatis",
+    "Oracle",
+    "Tomcat 9", ],
+  scout: [ "Java · Spring (MVC/Security)", "MyBatis", "Oracle (SQL/PL/SQL), REST API", "Open API 연동", "Tomcat 9" ],
+  fitshare: [ "React", "CSS",  "Pagination", "Modal", "React Router" ],
 };
 
 /** 전역 스킬(요약) */
 const SKILLS = {
-  Backend: [ "REST API", "JWT", "DB 설계(ERD)" ],
-  Frontend: [ "React", "React Router", "Axios", "CSS" ],
-  Infra: [ "Git / GitHub", "GitHub Pages" ],
-  Collaboration: [ "요구사항 정리", "WBS", "테스트 시나리오", "데일리 보고" ],
+  Backend: [ "REST API", "JWT", "DB 설계(ERD)", "Oracle (SQL/PL/SQL)", "Java · Spring (MVC/Security)", "MyBatis", "Tomcat 9", "JSP" ],
+  Frontend: [ "React", "React Router", "Axios", "CSS", "JavaScript", "HTML" ],
+  Infra: [ "GitHub Pages", "Eclipse" ],
+  Collaboration: [ "요구사항 정리", "WBS", "테스트 시나리오", "데일리 보고", "Git / GitHub" ],
 };
 
 /** 연락처/링크 */
@@ -109,7 +112,7 @@ export default function App() {
             <h2>프로젝트 인덱스</h2>
             <ul className="index">
               <li><a href="#p1">[1] MyPlate – 혼밥, 복지카드 이용자들을 위한 맛집 추천 사이트</a></li>
-              <li><a href="#p2">[2] Scout – 제주 여행정보 포털</a></li>
+              <li><a href="#p2">[2] Trace – 제주 여행정보 포털</a></li>
               <li><a href="#p3">[3] Fitshare – 운동 백과 + 커뮤니티</a></li>
             </ul>
           </div>
@@ -117,7 +120,7 @@ export default function App() {
 
         {/* ===== Global Skills ===== */}
         <section id="skills">
-          <h2>Skills</h2>
+          <h2>Total Skills</h2>
           <div className="grid">
             <div className="card">
               <h4>Backend</h4>
@@ -209,8 +212,8 @@ export default function App() {
 
           {/* Project 2 */}
           <article id="p2" className="project">
-            <h3>Scout · 제주 여행/축제 포털</h3>
-            <p className="meta">기간: 2025.07 – 2025.08 · 팀 | 포지션: 백엔드(주), 프론트(보조)</p>
+            <h3>Trace · 제주 여행/축제 포털</h3>
+            <p className="meta">기간: 2025.07 – 2025.08 · 팀 | 포지션: 백엔드</p>
 
             {/* 1) 시연 영상 : 전체 폭 */}
             <div className="card">
@@ -263,7 +266,7 @@ export default function App() {
           {/* Project 3 */}
           <article id="p3" className="project">
             <h3>Fitshare · 운동 커뮤니티</h3>
-            <p className="meta">기간: 2025.05 – 2025.06 · 팀 | 포지션: 프론트(주), 백엔드(보조)</p>
+            <p className="meta">기간: 2025.05 – 2025.06 · 팀 | 포지션: 프론트</p>
 
             {/* 1) 시연 영상 : 전체 폭 */}
             <div className="card">
@@ -274,6 +277,9 @@ export default function App() {
 
             {/* 2) 사용 기술 + 개요 : 한 칸(전체 폭) */}
             <div className="card">
+              <h4>사용 기술</h4>
+              <Chips items={STACK.fitshare} />
+
               <h4>개요</h4>
               <p>
                 <b>운동 백과 + 커뮤니티</b>입니다. 신체 부위별 운동 방법과 올바른 자세를 제공하고,
