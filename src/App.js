@@ -35,13 +35,34 @@ function Chips({ items }) {
 }
 
 function VideoBox({ src, poster }) {
+  const posterUrl = poster ? asset(poster) : undefined;
+
+  if (!src) {
+    return (
+      <div className="video-box">
+        {posterUrl && (
+          <img
+            src={posterUrl}
+            alt="project thumbnail"
+            className="video-thumb"
+            style={{
+              width: "100%",
+              borderRadius: "12px",
+              display: "block",
+            }}
+          />
+        )}
+      </div>
+    );
+  }
+
   return (
     <div className="video-box">
       <video
         controls
         playsInline
         preload="metadata"
-        poster={poster ? asset(poster) : undefined}
+        poster={posterUrl}
         onError={(e) => {
           const p = document.createElement("p");
           p.className = "warn";
@@ -50,7 +71,6 @@ function VideoBox({ src, poster }) {
           e.currentTarget.replaceWith(p);
         }}
       >
-        {/* 👉 여기 src는 public/videos 아래에 mp4 파일 넣고 바꿔주면 됨 */}
         {src && <source src={asset(src)} type="video/mp4" />}
         브라우저가 HTML5 video 태그를 지원하지 않습니다.
       </video>
@@ -323,7 +343,7 @@ function AIProjectsPage() {
           period="2025.02 – 2025.03"
           teamType="개인 프로젝트"
           role="데이터 전처리 · 피처 엔지니어링 · 모델링"
-          videoSrc="/videos/fertility_demo.mp4"
+          videoSrc={null}
           videoPoster="/images/fertility_poster.jpg"
           summary="전국 시·도별 출산율, 혼인, 고령화, 인구 데이터를 활용해 출산율을 예측하는 회귀 모델을 개발했습니다."
           bullets={[
@@ -343,7 +363,7 @@ function AIProjectsPage() {
           period="2025.03 – 2025.04"
           teamType="개인 프로젝트"
           role="모델 구조 설계 · LLM 프롬프트 엔지니어링"
-          videoSrc="/videos/football_demo.mp4"
+          videoSrc={null}
           videoPoster="/images/football_poster.jpg"
           summary="최근 경기 기록 시퀀스를 기반으로 승·무·패를 예측하고, LLM이 예측 근거를 한국어로 해설해주는 프로젝트입니다."
           bullets={[
