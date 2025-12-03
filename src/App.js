@@ -250,7 +250,7 @@ function FullStackPage() {
           period="2025.07 – 2025.08"
           teamType="팀 프로젝트"
           role="여행/축제 게시판 백엔드 설계 및 구현"
-          videoSrc="/videos/scout_demo1.mp4" 
+          videoSrc="/videos/scout_demo1.mp4?v=2" 
           videoPoster="/images/scout_poster.jpg"
           summary="제주도의 명소·맛집·축제 정보를 한 번에 검색하고, 기간/지역/테마로 필터링할 수 있는 여행/축제 포털입니다."
           bullets={[
